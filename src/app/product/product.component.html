@@ -1,0 +1,73 @@
+<div class="grid-view" *ngIf="view === 'grid'">
+  <div class="card text-center">
+    <div class="card-header fw-bold fs-5 text-success">Audi A3 cotet</div>
+    <div
+      class="overflow-hidden d-flex justify-content-center align-items-center"
+    >
+      <img
+        src="../../assets/img/Audi-a3-2007.png"
+        alt=""
+        class="card-img-top"
+      />
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title title">Titlu</h5>
+      <h6 class="card-subtitle my-2 text-primary">12 produse disponibile</h6>
+      <p class="card-text description">Descriere</p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title text-success">
+        Pret Final
+        <span class="text-primary"> 6969$</span>
+      </h5>
+      <h6 class="card-subtitle text-danger text-decoration-line-through">
+        Pret Original
+      </h6>
+    </div>
+
+    <div class="card-footer d-grid gap-2">
+      <button class="btn btn-outline-succes" type="button">Cumpara</button>
+    </div>
+  </div>
+</div>
+
+<div class="list-view" *ngIf="view === 'list'">
+  <div class="card">
+    <div class="row">
+      <div
+        class="col-md-4 over d-flex justify-content-center align-items-center"
+      >
+        <img
+          src="../../assets/img/Audi-a3-2007.png"
+          class="img-fluid rounded-start"
+          alt="Product Image"
+        />
+      </div>
+      <div class="col">
+        <div class="card-header text-center">Audi a3 cotet</div>
+        <div class="card-body">
+          <h5 class="card-title title">Titlu</h5>
+          <p class="card-text description">Descriere</p>
+          <h6 class="card-subtitle my-3 text-primary">
+            12 produse disponibile
+          </h6>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-muted">Pricing</h4>
+          <h2 class="card-title text-succes">
+            Final Price
+            <span class="text-primary">-20</span>
+          </h2>
+          <h5 class="card-subtitle text-danger text-decoration-line-through">
+            Pret Initial
+          </h5>
+        </div>
+        <div class="card-footer text-muted d-grid gap-2">
+          <button class="btn btn-outline-succes" type="button">Cumpara</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
