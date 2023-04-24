@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { OpenProductDetailsDirective } from '../directives/open-product-details.directive';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
