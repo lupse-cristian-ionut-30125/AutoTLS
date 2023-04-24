@@ -1,1 +1,106 @@
-<p>order works!</p>
+<div class="my-container mx-auto">
+  <section class="m-3 p-4 border border-dark my-rounded-corner">
+    <h4 class="w-25 border botder-secondary text-center py-2 my-rounded-corner">
+      Payment Info
+    </h4>
+    <table class="table w-50 mx-auto table-bordered table-hover my-shadow">
+      <tbody>
+        <tr>
+          <td>Numar produse</td>
+          <td class="fs-5 fw-bold">2</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td class="fs-5 fw-bold text-danger">10.000 RON</td>
+        </tr>
+
+        <tr>
+          <td>Pret transport</td>
+          <td class="fs-5 fw-bold text-danger">2.500 RON</td>
+        </tr>
+        <tr>
+          <td>Reducere</td>
+          <td class="fs-5 fw-bold text-success">1.300 RON</td>
+        </tr>
+        <tr>
+          <td>Ai de platit</td>
+          <td class="fs-5 fw-bold text-success">11.200 RON</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="m-3 p-4 border border-dark my-rounded-corner">
+    <h4 class="w-25 border botder-secondary text-center py-2 my-rounded-corner">
+      Payment Method
+    </h4>
+    <div class="d-flex justify-content-center align-items-center">
+      <h5 class="me-4">Select Any Method</h5>
+      <select class="form-select w-25" [formControl]="selectedPaymentMethod">
+        <option value="0">Open this select menu</option>
+        <option
+          *ngFor="let paymentMethod of [1, 2, 3]"
+          value="{{ paymentMethod }}"
+        >
+          option
+        </option>
+      </select>
+    </div>
+  </section>
+
+  <section class="m-3 p-4 border border-dark my-rounded-corner">
+    <h4 class="w-25 border botder-secondary text-center py-2 my-rounded-corner">
+      Proceed to Payments
+    </h4>
+    <div class="mt-4 w-50" *ngIf="selectedPaymentMethodName !== ''">
+      <table class="table table-bordered my-shadow">
+        <thead>
+          <tr>
+            <td>Ai de platit</td>
+            <td>11.200 RON</td>
+          </tr>
+          <tr>
+            <td>Metoda de Plata</td>
+            <td>UPI - ApplePay</td>
+          </tr>
+          <tr>
+            <td>Adresa</td>
+            <td *ngIf="true">
+              My Address will go here!
+              <a routerLink="/account-settings">Change</a>
+            </td>
+            <td *ngIf="!true">
+              You have not entered address.
+              <a routerLink="/account-settings">Please Enter that</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Mobile Number</td>
+            <td *ngIf="true">
+              0749262433 <a routerLink="/account-settings">Change</a>
+            </td>
+            <td *ngIf="!true">
+              You have not entered Mobile Number
+              <a routerLink="/account-settings">Please Enter that</a>
+            </td>
+          </tr>
+        </thead>
+      </table>
+
+      <div class="d-grid w-50">
+        <button type="button" class="btn btn-outline-success mb-4">Pay</button>
+      </div>
+
+      <div class="processing">
+        <div class="spinner-border me-4" role="status" *ngIf="true">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h6 class="m-0">error</h6>
+      </div>
+    </div>
+  </section>
+
+  <div *ngIf="!false" class="pt-4">
+    <h2>You have not Logged In</h2>
+  </div>
+</div>
