@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { OpenProductDetailsDirective } from './directives/open-product-details.directive';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
